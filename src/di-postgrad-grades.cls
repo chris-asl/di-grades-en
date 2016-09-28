@@ -35,7 +35,7 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
   \fancyhf{}
-  \cfoot{}
+  \cfoot{\firstpagefooter}
 }
 %% =============================================================================
 
@@ -88,6 +88,19 @@
     }
     \end{center}
     \vspace{0.5cm}
+}
+%% =============================================================================
+
+%% First page footer
+%% =============================================================================
+\newcommand{\firstpagefooter}{
+  \fontsize{10}{11}\selectfont{
+  \begin{tabularx}{\textwidth}{ l l X }
+      \underline{Note:} & Non-successful examination: & Grade less than 5 (five) \\
+      & Successful examination: & Grade greater than or equal to 5,0
+  \end{tabularx}
+  \\\vspace{0.5cm}
+  \--- \hspace{0.05cm} \thepage \hspace{0.05cm} \---}
 }
 %% =============================================================================
 
