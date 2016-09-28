@@ -194,7 +194,7 @@
 }
 
 \newcommand{\grade}[5]{%
-    #1 & #2 & #3 & #4 & #5 \\
+    #1 & #2 & #3 & #4 & #5 \\[8pt]
 }
 
 %% =============================================================================
@@ -203,10 +203,9 @@
 %% =============================================================================
 \newcommand{\farewell}{
     \bfseries
+    \vspace{0.5cm}
     \begin{center}
         THE REGISTRAR: {\registrar} \\[20pt]
-        (Signature) \--- {\signer} \\[20pt]
-        (University's official seal)
     \end{center}
     \mdseries
 }
