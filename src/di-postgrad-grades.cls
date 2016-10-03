@@ -176,7 +176,7 @@
     \end{tabularx}
     \end{center}
     \vspace{0.4cm}
-    The student has been chosen for the Departments' M.Sc. specialization with title: 'Computing Systems: Software and Hardware (SYS)'.   \\[6pt]
+    The student has been chosen for the Department's M.Sc. specialization with title: 'Computing Systems: Software and Hardware (SYS)'.   \\[6pt]
     This certificate is granted for any legal use.
 
     \vspace{0.5cm}
