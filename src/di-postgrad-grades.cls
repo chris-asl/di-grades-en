@@ -35,7 +35,6 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
   \fancyhf{}
-  \cfoot{\firstpagefooter}
 }
 %% =============================================================================
 
@@ -91,19 +90,6 @@
 }
 %% =============================================================================
 
-%% First page footer
-%% =============================================================================
-\newcommand{\firstpagefooter}{
-  \fontsize{10}{11}\selectfont{
-  \begin{tabularx}{\textwidth}{ l l X }
-      \underline{Note:} & Non-successful examination: & Grade less than 5 (five) \\
-      & Successful examination: & Grade greater than or equal to 5,0
-  \end{tabularx}
-  \\\vspace{0.5cm}
-  \--- \hspace{0.05cm} \thepage \hspace{0.05cm} \---}
-}
-%% =============================================================================
-
 %% Rest pages header
 %% =============================================================================
 \newcommand{\restpagesheader}{
@@ -127,9 +113,8 @@
 \newcommand{\restpagesfooter}{
     \fontsize{10}{11}\selectfont{
     \begin{tabularx}{\textwidth}{ l l X }
-        \underline{Note:} & Successful examination: & Grade greater than or equal to 5 (five) \\
-        ~ & Non-successful examination: & Grade less than 5 (five) \\
-        ~ & Successful examination: & Grade greater than or equal to 5,0
+         \underline{Note:} & Non-successful examination: & Grade less than 5 (five) \\
+        ~ & Successful examination: & Grade greater than or equal to 5 (five)
     \end{tabularx}
     \\\vspace{0.5cm}
     \--- \hspace{0.05cm} \thepage \hspace{0.05cm} \---}
@@ -160,36 +145,47 @@
     \flushleft{It is certified that the information provided below are accurate and true.}
     \vspace{0.3cm}
     \begin{center}
-    \begin{tabularx}{\textwidth}{ l X }
-      \thead{IDENTITY INFORMATION} \\
-        Surname & \textbf{\studentsurname} \\
-        Name & \textbf{\studentname} \\
-        Father's Name & {\studentfathername} \\
-        Mother's Name & {\studentmothername} \\
-        Place of Birth & {\studentbirthplace} \\
-        Date of Birth & {\studentbirthdate} \\
-      \thead{}\\
-      \thead{REGISTRATION INFORMATION} \\
-        Academic year of Registration & {\studentregistrationyear} \\
-        Date of Registration & {\studentregistrationdate} \\
-        Registration Number & \textbf{\studentid} \\
-    \end{tabularx}
+      \begin{tabularx}{\textwidth}{ l X }
+        \thead{IDENTITY INFORMATION} \\
+          Surname & \textbf{\studentsurname} \\
+          Name & \textbf{\studentname} \\
+          Father's Name & {\studentfathername} \\
+          Mother's Name & {\studentmothername} \\
+          Place of Birth & {\studentbirthplace} \\
+          Date of Birth & {\studentbirthdate} \\
+        \thead{}\\
+        \thead{REGISTRATION INFORMATION} \\
+          Academic year of Registration & {\studentregistrationyear} \\
+          Date of Registration & {\studentregistrationdate} \\
+          Registration Number & \textbf{\studentid} \\
+      \end{tabularx}
     \end{center}
     \vspace{0.4cm}
-    The student has been chosen for the Department's M.Sc. specialization with title: 'Computing Systems: Software and Hardware (SYS)'.   \\[6pt]
-    This certificate is granted for any legal use.
 
-    \vspace{0.5cm}
+    \ifgraduated
+      The student was chosen for the Department's M.Sc. specialization with title: ``Computing Systems: Software and Hardware (SYS)'' and
+      has been declared a graduate as of {\graduationdate}, took their pledge on {\pledgedate} and received their Degree Award
+      (``Master of Science'') with No. {\degreeid} and grade {\gpa} ({\gpainfull}). \\[6pt]
+
+    \else
+      The student has been chosen for the Department's M. Sc. specialization with title: 'Computing Systems: Software and Hardware (SYS)'. \\[6pt]
+
+      The aforementioned student retains their student status during the current academic year, {\thisyear}. \\[6pt]
+    \fi
+
+    The detailed transcript of records is presented in the following page and the grading scale is indicated in the footnotes. \\[6pt]
+
+    This certificate is granted for any legal use. \\[6pt]
+
+    \pagebreak
 }
+
 %% =============================================================================
 
 %% Grades section
 %% =============================================================================
-\newenvironment{grades}{%
-   \restpagesheader
-   \fontsize{10}{10}\selectfont{
-}{%
-}
+\newenvironment{grades}{
+   \fontsize{10}{10}\selectfont{}{}
 }
 
 
